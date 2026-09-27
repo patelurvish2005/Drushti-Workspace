@@ -1,0 +1,495 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--color-text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mouse.jsx — soft blush spotlight, fixed positioning */
+.mouse-glow {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: radial-gradient(
+    circle,
+    var(--mouse-glow) 0%,
+    var(--mouse-glow-outer) 42%,
+    transparent 68%
+  );
+}
+
+.container {
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 30%;
+  height: 100vh;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+#Hero {
+  height: 80%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  align-self: center;
+}
+
+#Hero h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -3px;
+  color: var(--color-text);
+}
+
+#Hero h4 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding: 5px 0;
+  color: var(--color-insight);
+}
+
+#Hero p {
+  font-size: 1rem;
+  color: var(--color-muted);
+  padding: 8px 0;
+}
+
+.bi {
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.bi:hover {
+  color: var(--color-accent);
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+}
+
+.index {
+  margin-top: -50px;
+}
+
+.indexO {
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.indexO.active {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.indexO #sapDash {
+  width: 50px;
+  height: 1.5px;
+  background-color: var(--color-muted);
+  margin: 0 10px 0 0;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.indexO.active #sapDash {
+  background-color: var(--color-accent-light);
+}
+
+.indexO #indexName {
+  color: var(--color-muted);
+  cursor: pointer;
+  font-size: 15px;
+  transition: color 0.25s ease, font-size 0.25s ease;
+}
+
+.indexO #indexName:hover {
+  font-size: 17px;
+  color: var(--color-accent);
+}
+
+.indexO.active #indexName {
+  color: var(--color-accent);
+}
+
+.Content {
+  width: 50%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: 80%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.Content #about p {
+  color: var(--color-muted);
+}
+
+.Content #about spantext {
+  font-size: 15px;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.Content h5 {
+  font-size: 18px;
+  font-family: monospace;
+  margin-top: 40px;
+  color: var(--color-text-soft);
+  position: relative;
+  padding-left: 12px;
+}
+
+.Content h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background-color: var(--color-accent-light);
+}
+
+.Content #skillCard,
+#ExpCard,
+#projCard {
+  padding: 15px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  overflow: visible;
+}
+
+.Content #skillCard #skillField,
+#ExpTitle {
+  color: var(--color-muted);
+  width: 40%;
+}
+
+#ExpTitle {
+  font-size: 14px;
+  width: 30%;
+}
+
+.Content #skillCard #skillList,
+#ExpInfo {
+  width: 60%;
+  font-size: 15px;
+}
+
+#ExpInfo {
+  width: 90%;
+}
+
+#ExpCompanyName,
+#projTitle,
+#CertiTitle a {
+  color: var(--color-link);
+}
+
+#ExpList {
+  font-size: 14px;
+}
+
+#ExpSkillList {
+  margin: 10px 0px;
+}
+
+#ExpProject {
+  margin: 15px 0px;
+}
+
+#ExpProject a {
+  padding: 4px 10px;
+  border-radius: 10px;
+  color: var(--color-tag-text);
+  background-color: var(--color-tag-bg);
+  width: fit-content;
+  box-shadow: var(--shadow-xs);
+  text-decoration: none;
+}
+
+#ExpProject a:hover {
+  color: var(--color-accent);
+}
+
+.Content #skillCard #skillList #skillListSet {
+  user-select: none;
+  margin-bottom: 7px;
+}
+
+.Content #skillCard #skillList #skillListSet skill,
+skill {
+  font-size: 14px;
+  padding: 3px 9px;
+  border-radius: 10px;
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+}
+
+.Content #skillCard,
+#projCard {
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--color-border);
+}
+
+#BoxLink {
+  padding: 5px 15px;
+  border-radius: 8px;
+  width: fit-content;
+  background-color: var(--color-pale);
+  box-shadow: var(--shadow-xs);
+}
+
+#BoxLink a {
+  color: var(--color-link);
+}
+
+#BoxLink a:hover {
+  color: var(--color-accent);
+}
+
+#projCard {
+  gap: 15px;
+}
+
+#projCard #projImage img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+#projCard #projImage {
+  justify-items: center;
+}
+
+#projCard #projDesc {
+  font-size: 15px;
+  padding: 5px;
+  color: var(--color-muted);
+}
+
+#certiCard,
+#contactCard {
+  padding: 15px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--color-border);
+  align-items: center;
+}
+
+#CertiImage img {
+  width: 90px;
+  height: 70px;
+  border-radius: 5px;
+  box-shadow: var(--shadow-sm);
+}
+
+#contactCard {
+  padding: 0px;
+  flex-direction: column;
+  align-items: start;
+  background-color: transparent;
+  font-size: 15px;
+  box-shadow: none;
+  border: none;
+}
+
+#contactCard a {
+  color: var(--color-tag-text);
+  text-decoration: none;
+  padding: 3px 10px;
+  background-color: var(--color-tag-bg);
+  border-radius: 10px;
+}
+
+#contactCard a:hover {
+  color: var(--color-accent);
+}
+
+#thankyou {
+  padding: 20px 0;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+  gap: 5spx;
+}
+
+#greet {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 22px;
+}
+
+#copy {
+  color: var(--color-muted);
+  font-weight: 200;
+  font-size: 15px;
+}
+
+#petCat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#catie {
+  margin-top: -3px;
+  margin-left: -25px;
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.resume-badge {
+  font-weight: 200;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: var(--color-pale);
+  color: var(--color-insight);
+  border: 1px solid var(--color-border);
+}
+
+@media only screen and (max-width: 995px) {
+  .container {
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    height: fit-content;
+  }
+
+  #Hero {
+    position: relative;
+  }
+
+  #Hero,
+  .Content {
+    width: 90%;
+    height: fit-content;
+  }
+
+  #Hero h2 {
+    padding-top: 20px;
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+
+  #Hero h4 {
+    font-size: 1rem;
+    padding: 5px 0;
+  }
+
+  #Hero p {
+    font-size: 0.8rem;
+    padding: 0px 0;
+  }
+
+  #logos {
+    margin-bottom: 20px;
+  }
+
+  .index {
+    display: none;
+  }
+
+  .Content {
+    overflow: hidden;
+    scrollbar-width: none;
+    height: fit-content;
+  }
+
+  .Content h5 {
+    margin-top: 10px;
+  }
+
+  .Content #skillCard,
+  #ExpCard,
+  #projCard {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .Content #skillCard #skillField,
+  #ExpTitle {
+    width: 90%;
+  }
+
+  #ExpTitle {
+    width: 90%;
+  }
+
+  #ExpCard {
+    margin: 0;
+  }
+
+  #experiance,
+  #education {
+    margin-top: 20px;
+  }
+
+  .Content #skillCard #skillList,
+  #ExpInfo {
+    width: 100%;
+  }
+
+  #ExpProject a {
+    line-height: 30px;
+  }
+
+  skill {
+    line-height: 25px;
+  }
+
+  #certiCard {
+    flex-direction: column;
+  }
+}
