@@ -775,7 +775,7 @@ function Content() {
           <div className="fade-up" id="certiCard">
             <div id="CertiImage">
               <img
-                src="https://certificates.dev/.netlify/images?url=%2Fimages%2Ftech%2Freact%2Fhero-mobile-tablet.png"
+                src="https://tse4.mm.bing.net/th/id/OIP.G31MyeaY9HFe5yussGyVGAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt=""
                 srcSet=""
               />
@@ -783,7 +783,7 @@ function Content() {
             <div id="CertiInfo">
               <div id="CertiTitle">
                 <a href="#" target="_blank">
-                  Data Analyst - Trainee
+                  Data Analyst Intern
                 </a>{" "}
                 ↗
               </div>
@@ -794,7 +794,7 @@ function Content() {
           <div className="fade-up" id="certiCard">
             <div id="CertiImage">
               <img
-                src="https://certificates.dev/.netlify/images?url=%2Fimages%2Ftech%2Freact%2Fhero-mobile-tablet.png"
+                src="https://tse4.mm.bing.net/th/id/OIP.G31MyeaY9HFe5yussGyVGAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt=""
                 srcSet=""
               />
